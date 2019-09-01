@@ -6,22 +6,7 @@
   <title>Aplicativo Hidros</title>
 
   <base href="/" />
-  <ion-menu side="start" menuId="first">
-      <ion-header>
-        <ion-toolbar color="primary">
-          <ion-title>Start Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-list>
-          <ion-item>Menu Item</ion-item>
-          <ion-item>Menu Item</ion-item>
-          <ion-item>Menu Item</ion-item>
-          <ion-item>Menu Item</ion-item>
-          <ion-item>Menu Item</ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
+  
 
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="format-detection" content="telephone=no" />
@@ -35,6 +20,26 @@
 </head>
 
 <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBkwSTe92TEDZov02UYj5aW1FLaA9bjs2o",
+    authDomain: "trainees192.firebaseapp.com",
+    databaseURL: "https://trainees192.firebaseio.com",
+    projectId: "trainees192",
+    storageBucket: "",
+    messagingSenderId: "946457543240",
+    appId: "1:946457543240:web:93f68fcb63d5b554"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
   <app-root></app-root>
 </body>
 
