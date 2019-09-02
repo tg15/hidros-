@@ -1,7 +1,16 @@
-.getstart {
-
-    background-image: url('../../assets/img/Hidros1.jpg');
+page-home{
+    .bg-image {
+        background-image: url("../../app/home/img/img.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}
+.bgImg {
+    background-image: url('../../app/home/img/img.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    height:100%;
-}
+    }
+    body  {
+        background-color: #000;
+      }
