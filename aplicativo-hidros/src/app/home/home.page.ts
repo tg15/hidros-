@@ -9,4 +9,8 @@ export class HomePage {
 
   constructor() {}
 
+
+alerta(){
+  console.log("o botão foi pressionado");
+ }
 }

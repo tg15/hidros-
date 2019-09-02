@@ -1,45 +1,39 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  
+  <ion-toolbar>
+    Seja bem vindo a
     <ion-title>
-      <h3> Aplicativo Hidros </h3> 
+      Hidros Consultoria
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<div class="ion-button getstart"> <p><p><p>
-  <ion-button color="dark" href="right"> <h5> Engenharia Elétrica </h5>
-  </ion-button> <p>
-  <ion-button color="dark" href="right"> <h5> Enhenharia Mecânica </h5> 
-  </ion-button> <p>
-  <ion-button color="dark" href="right"> <h5> Enhenharia Civil </h5> 
-  </ion-button> <p>
-  <ion-button color="dark" href="right"> <h5> Enhenharia Produção </h5> 
-  </ion-button> <p>
-  <ion-button color="dark" href="right"> <h5> Enhenharia Ambiental </h5> 
-  </ion-button> <p>
-  <ion-button color="dark" href="right"> <h5> Enhenharia Cartográfica </h5> 
-    
 
-  </ion-button>
-</div>
-
-
-
-<ion-content class="getstart"> 
-
- 
+<ion-content>
+  
   <div class="ion-padding">
-  
-      <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="add"></ion-icon>
-          </ion-fab-button>
-          <ion-fab-list side="end">
-          
-          </ion-fab-list>
-        </ion-fab>
-    Carta de serviço
-    
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
-  
+    Escolha seu Serviço:
+      </div>
+  <ion-list>
+      <ion-item routerLink="/eng"> 
+        <ion-button color="dark" href="right"> <h5> Engenharia Elétrica </h5>
+        </ion-button> <p>
+      
+      </ion-item>
+      <ion-item routerLink="/engci">
+        <ion-button color="dark" href="right"> <h5> Enhenharia Civil </h5> 
+        </ion-button> <p>
+      </ion-item>
+      <ion-item routerLink="/engpro">
+        <ion-button color="dark" href="right"> <h5> Enhenharia de Produção </h5> 
+        </ion-button> <p>
+      </ion-item>
+      <ion-item routerLink="/engmec">
+        <ion-button color="dark" href="right"> <h5> Enhenharia Mecânica </h5> 
+        </ion-button> <p>
+      </ion-item>
+      <ion-item routerLink="/engamb">
+        <ion-button color="dark" href="right"> <h5> Enhenharia Ambiental </h5> 
+        </ion-button> <p>
+      </ion-item>
+    </ion-list>
 </ion-content>
