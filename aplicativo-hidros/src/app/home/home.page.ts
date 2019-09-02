@@ -11,6 +11,10 @@ export class HomePage {
 
 
 alerta(){
-  console.log("o botão foi pressionado");
+  console.log(this.newMethod());
  }
+
+  private newMethod(): any {
+    return "o botão foi pressionado";
+  }
 }

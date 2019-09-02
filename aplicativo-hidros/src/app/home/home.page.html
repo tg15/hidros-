@@ -7,37 +7,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="bgImg">
-  <div class="ion-padding">
-    <h3>Escolha o Serviço: </h3>
-      </div>
-      <div class="bgImg">
-      <ion-list>
-      <ion-item routerLink="/eng"> 
-        <ion-button color="dark" href="right"> <h5> Engenharia Elétrica </h5>
-        </ion-button> <p>
-      
-      </ion-item>
-      <ion-item routerLink="/engci">
-        <ion-button color="dark" href="right"> <h5> Enhenharia Civil </h5> 
-        </ion-button> <p>
-      </ion-item>
-      <ion-item routerLink="/engpro">
-        <ion-button color="dark" href="right"> <h5> Enhenharia de Produção </h5> 
-        </ion-button> <p>
-      </ion-item>
-      <ion-item routerLink="/engmec">
-        <ion-button color="dark" href="right"> <h5> Enhenharia Mecânica </h5> 
-        </ion-button> <p>
-      </ion-item>
-      <ion-item routerLink="/engamb">
-        <ion-button color="dark" href="right"> <h5> Enhenharia Ambiental </h5> 
-        </ion-button> <p>
-      </ion-item>
-      <ion-item routerLink="/engamb">
-        <ion-button color="dark" href="right"> <h5> Enhenharia Cartográfica </h5> 
-        </ion-button> <p>
-      </ion-item>
-    </ion-list>
-  </div>
+<ion-content>
+    <ion-card class="welcome-card">
+      <img src="https://www.hidrosconsultoria.com.br/site/wp-content/uploads/2017/10/logo-inverse-image.png" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>Bem Vindo(a)!</ion-card-subtitle>
+        <ion-card-title>HIDROS CONSULTORIA</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Você sonha, nós realizamos</p>
+      </ion-card-content>
+    </ion-card>
+    <div class="ion-padding">
+      ESCOLHA O SERVIÇO:
+        </div>
+    <ion-list>
+        <ion-item routerLink="/eng"> 
+          <ion-label>Engenharia elétrica</ion-label>
+        
+        </ion-item>
+        <ion-item routerLink="/engci">
+          <ion-label>Engenharia civil</ion-label>
+        </ion-item>
+        <ion-item routerLink="/engpro">
+          <ion-label >Engenharia de produção</ion-label>
+        </ion-item>
+        <ion-item routerLink="/engmec">
+          <ion-label >Engenharia mecânica</ion-label>
+        </ion-item>
+        <ion-item routerLink="/engamb">
+          <ion-label >Engenharia ambiental</ion-label>
+        </ion-item>
+      </ion-list>
   </ion-content>
