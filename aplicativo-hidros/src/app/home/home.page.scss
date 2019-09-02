@@ -1,8 +1,16 @@
 page-home{
     .bg-image {
-        background-image: url("../home/img/img.jpg");
+        background-image: url("../../app/home/img/img.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
     }
 }
+.bgImg {
+    background-image: url('../../app/home/img/img.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    }
+    body  {
+        background-color: #000;
+      }
