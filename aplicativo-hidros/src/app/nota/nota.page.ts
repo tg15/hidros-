@@ -7,17 +7,17 @@ import { CrudService } from './../banco-de-dados-de-serviços.service';
   styleUrls: ['./nota.page.scss'],
 })
 export class NotaPage implements OnInit {
-  Serviços: any;
-  ServiçoName: string;
-  ServiçoAge: number;
-  ServiçoAddress: string;
+  Servicos: any;
+  ServicoName: string;
+  ServicoAge: number;
+  ServicoAddress: string;
 
   constructor(private crudService: CrudService) {}
 
   ngOnInit() {
-    this.crudService.read_Serviços().subscribe(data => {
+    this.crudService.read_Servicos().subscribe(data => {
  
-      this.Serviços = data.map(e => {
+      this.Servicos = data.map(e => {
         return {
           id: e.payload.doc.id,
           isEdit: false,
@@ -26,20 +26,20 @@ export class NotaPage implements OnInit {
           Address: e.payload.doc.data()['Address'],
         };
       })
-      console.log(this.Serviços);
+      console.log(this.Servicos);
  
     });
   }
 
   CreateRecord() {
     let record = {};
-    record['Name'] = this.ServiçoName;
-    record['Age'] = this.ServiçoAge;
-    record['Address'] = this.ServiçoAddress;
-    this.crudService.create_NewServiço(record).then(resp => {
-      this.ServiçoName = "";
-      this.ServiçoAge = undefined;
-      this.ServiçoAddress = "";
+    record['Name'] = this.ServicoName;
+    record['Age'] = this.ServicoAge;
+    record['Address'] = this.ServicoAddress;
+    this.crudService.create_NewServico(record).then(resp => {
+      this.ServicoName = "";
+      this.ServicoAge = undefined;
+      this.ServicoAddress = "";
       console.log(resp);
     })
       .catch(error => {
@@ -47,7 +47,7 @@ export class NotaPage implements OnInit {
       });
   }
   RemoveRecord(rowID) {
-    this.crudService.delete_Serviço(rowID);
+    this.crudService.delete_Servico(rowID);
   }
   
   EditRecord(record) {
@@ -62,7 +62,7 @@ export class NotaPage implements OnInit {
     record['Name'] = recordRow.EditName;
     record['Age'] = recordRow.EditAge;
     record['Address'] = recordRow.EditAddress;
-    this.crudService.update_Serviço(recordRow.id, record);
+    this.crudService.update_Servico(recordRow.id, record);
     recordRow.isEdit = false;
   }
 
