@@ -3,3 +3,19 @@ page-nota{
         background :  #FFFF00 !important;
     }
 }
+page-home{
+    .bg-image {
+        background-image: url(https://www.colorhexa.com/f9f06f.png);
+        background-repeat: repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}
+.bgImg {
+    background-image: url('../../app/home/img/img3.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    }
+    body  {
+        background-color: rgb(20, 20, 17);
+    }

@@ -1,40 +1,45 @@
 <ion-header>
-  <ion-toolbar color="dark"> 
-    <ion-title color="light"class="bgImg">
+  <ion-toolbar color="secondary"> 
+    <ion-title color="primary">
      <h3> HOME </h3>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="bgImg">
-    <ion-card class="welcome-card">
+<ion-content color="tertiary" class="bgImg">
+    <ion-card color ="primary" class="welcome-card">
       <img src="https://www.hidrosconsultoria.com.br/site/wp-content/uploads/2017/10/logo-inverse-image.png" alt="" />
       <ion-card-header>
-        <ion-card-subtitle>Bem Vindo(a)!</ion-card-subtitle>
+        <ion-card-subtitle>Bem Vindos(a)!</ion-card-subtitle>
         <ion-card-title>HIDROS CONSULTORIA</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Você sonha, nós realizamos</p>
+        <p>Você sonha, nós realizamos!</p>
       </ion-card-content>
     </ion-card>
-    <div class="ion-padding">
-      ESCOLHA O SERVIÇO:
+    <div class="ion-padding"><b>
+      ESCOLHA O SERVIÇO:</b>
         </div>
     <ion-list class="bgImg">
+        <ion-icon name="play" color="tertiary"></ion-icon>
         <ion-button routerLink="/eng" color="dark"> 
-          <ion-label>Engenharia Elétrica</ion-label> 
+          <ion-label color="primary">Engenharia Elétrica</ion-label> 
         </ion-button><br>
+        <ion-icon name="play" color="tertiary"></ion-icon>
         <ion-button routerLink="/engci" color="dark">
-          <ion-label>Engenharia Civil</ion-label>
+          <ion-label color="primary">Engenharia Civil</ion-label>
         </ion-button><br>
+        <ion-icon name="play" color="tertiary"></ion-icon>
         <ion-button routerLink="/engpro" color="dark">
-          <ion-label >Engenharia de Produção</ion-label>
+          <ion-label color="primary">Engenharia de Produção</ion-label>
         </ion-button><br>
+        <ion-icon name="play" color="tertiary"></ion-icon>
         <ion-button routerLink="/engmec" color="dark">
-          <ion-label >Engenharia Mecânica</ion-label>
+          <ion-label color="primary">Engenharia Mecânica</ion-label>
         </ion-button><br>
+        <ion-icon name="play" color="tertiary"></ion-icon>
         <ion-button routerLink="/engamb" color="dark">
-          <ion-label >Engenharia Ambiental</ion-label>
+          <ion-label color="primary">Engenharia Ambiental</ion-label>
         </ion-button>
       </ion-list>
   </ion-content>
