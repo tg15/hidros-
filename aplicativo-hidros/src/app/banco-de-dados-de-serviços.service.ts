@@ -12,12 +12,12 @@ export class CrudService {
   ) { }
  
  
-  create_NewServico(record) {
-    return this.firestore.collection('Serviço').add(record);
+  create_NewServico(record, list) {
+    return this.firestore.collection(`Serviço/${list}/servicos`).add(record);
   }
  
-  read_Servicos() {
-    return this.firestore.collection('Serviço').snapshotChanges();
+  read_Servicos(list) {
+    return this.firestore.collection(`Serviço/${list}/servicos`).snapshotChanges();
   }
  
   update_Servico(recordID,record){
