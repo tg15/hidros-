@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic 4 Firestore CRUD Operation Demo
+      Serviços
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,19 +12,20 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Enter Name" [(ngModel)]="ServicoName"></ion-input>
+          <ion-input placeholder="Serviço" [(ngModel)]="ServicoName"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Enter Age" [(ngModel)]="ServicoAge"></ion-input>
+          <ion-input placeholder="Descrição" [(ngModel)]="ServicoAge"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Enter Address" [(ngModel)]="ServicoAddress"></ion-input>
+          <ion-input placeholder="Briefing" [(ngModel)]="ServicoAddress"></ion-input>
         </ion-item>
       </ion-col>
+      
     </ion-row>
     <ion-row>
       <ion-col text-center>
@@ -37,11 +38,12 @@
   </ion-grid>
  
  
-  <ion-card *ngFor="let item of Servicos">
+  <ion-card *ngFor="let item of Servicos" click="serviços(item)"rounterlink="/nota" class="item">
     <span *ngIf="!item.isEdit; else elseBlock">
       <ion-card-header>
-        <ion-card-title>{{item.Name}} of {{item.Age}} years</ion-card-title>
-        <ion-card-subtitle>From: {{item.Address}}</ion-card-subtitle>
+        <ion-card-title>{{item.Name}}</ion-card-title>
+        <ion-card-subtitle>{{item.Age}}</ion-card-subtitle>
+        <ion-card-subtitle>Briefing:<br><br>{{item.Address}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
  
@@ -79,15 +81,15 @@
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label><strong>Name</strong></ion-label>
+          <ion-label><strong>Serviço</strong></ion-label>
           <ion-input type="text" [(ngModel)]="item.EditName"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label><strong>Age</strong></ion-label>
+          <ion-label><strong>Descrição</strong></ion-label>
           <ion-input type="text" [(ngModel)]="item.EditAge"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label><strong>Address</strong></ion-label>
+          <ion-label><strong>Briefing</strong></ion-label>
           <ion-input type="text" [(ngModel)]="item.EditAddress"></ion-input>
         </ion-item>
       </ion-card-content>

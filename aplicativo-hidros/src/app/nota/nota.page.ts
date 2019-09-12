@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../banco-de-dados-de-serviços.service';
+import {Router} from "@angular/router"
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-nota',
@@ -9,11 +11,36 @@ import { CrudService } from './../banco-de-dados-de-serviços.service';
 export class NotaPage implements OnInit {
   Servicos: any;
   ServicoName: string;
-  ServicoAge: number;
+  ServicoAge: string;
   ServicoAddress: string;
 
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: CrudService, private router:Router, public alertController:AlertController) {}
 
+  async alerta() {
+    const alert = await this.alertController.create({
+      header: "Compra",
+      subHeader: "Deseja adicionar este serviço?",
+      buttons: [
+        {
+          text: "Não",
+          role: "Cancel",
+          handler: () => {
+            console.log("Compra cancelada");
+          }
+        }, {
+          text: "Sim",
+          handler: () => {
+            console.log("Compra realizada");
+          }
+        }
+      ]
+
+    });
+
+    await alert.present();
+
+    
+  }
   ngOnInit() {
     this.crudService.read_Servicos().subscribe(data => {
  
@@ -21,9 +48,9 @@ export class NotaPage implements OnInit {
         return {
           id: e.payload.doc.id,
           isEdit: false,
-          Name: e.payload.doc.data()['Name'],
-          Age: e.payload.doc.data()['Age'],
-          Address: e.payload.doc.data()['Address'],
+          Name: e.payload.doc.data()['Serviço'],
+          Age: e.payload.doc.data()['Descrição'],
+          Address: e.payload.doc.data()['Briefing'],
         };
       })
       console.log(this.Servicos);
@@ -33,9 +60,9 @@ export class NotaPage implements OnInit {
 
   CreateRecord() {
     let record = {};
-    record['Name'] = this.ServicoName;
-    record['Age'] = this.ServicoAge;
-    record['Address'] = this.ServicoAddress;
+    record['Serviço'] = this.ServicoName;
+    record['Descrição'] = this.ServicoAge;
+    record['Briefing'] = this.ServicoAddress;
     this.crudService.create_NewServico(record).then(resp => {
       this.ServicoName = "";
       this.ServicoAge = undefined;
@@ -59,11 +86,14 @@ export class NotaPage implements OnInit {
 
   UpdateRecord(recordRow) {
     let record = {};
-    record['Name'] = recordRow.EditName;
-    record['Age'] = recordRow.EditAge;
-    record['Address'] = recordRow.EditAddress;
+    record['Serviço'] = recordRow.EditName;
+    record['Descrição'] = recordRow.EditAge;
+    record['Briefing'] = recordRow.EditAddress;
     this.crudService.update_Servico(recordRow.id, record);
     recordRow.isEdit = false;
+  }
+  verCardapio(item) {
+    this.router.navigateByUrl('nota/' + item.id);
   }
 
  
