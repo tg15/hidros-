@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CrudService } from './../banco-de-dados-de-serviços.service';
-
 @Component({
   selector: 'app-engmec',
   templateUrl: './engmec.page.html',
@@ -9,6 +7,7 @@ import { CrudService } from './../banco-de-dados-de-serviços.service';
 })
 export class EngmecPage implements OnInit {
 
+<<<<<<< HEAD
   ProjMecs: any;
   ProjmecName: string;
   ProjmecAge: number;
@@ -68,5 +67,11 @@ export class EngmecPage implements OnInit {
     this.crudService.update_Projmec(recordRow.id, record);
     recordRow.isEdit = false;
   }
-}
+=======
+  constructor() { }
 
+  ngOnInit() {
+  }
+
+>>>>>>> parent of 7f66cde... FUNCIONOU
+}

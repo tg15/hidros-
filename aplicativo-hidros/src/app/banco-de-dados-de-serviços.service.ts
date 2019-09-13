@@ -27,6 +27,7 @@ export class CrudService {
   delete_Servico(record_id) {
     this.firestore.doc('Serviço/' + record_id).delete();
   }
+<<<<<<< HEAD
 
 
 
@@ -108,4 +109,6 @@ export class CrudService {
 
 
 
+=======
+>>>>>>> parent of 7f66cde... FUNCIONOU
 }

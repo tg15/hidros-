@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from './../banco-de-dados-de-serviços.service';
 
 @Component({
   selector: 'app-engci',
@@ -7,15 +6,19 @@ import { CrudService } from './../banco-de-dados-de-serviços.service';
   styleUrls: ['./engci.page.scss'],
 })
 export class EngciPage implements OnInit {
+<<<<<<< HEAD
   
   Projcis: any;
   ProjciName: string;
   ProjciAge: number;
   ProjciAddress: string;
+=======
+>>>>>>> parent of 7f66cde... FUNCIONOU
 
-  constructor(private crudService: CrudService) { }
+  constructor() { }
 
   ngOnInit() {
+<<<<<<< HEAD
     this.crudService.read_Projcis().subscribe(data => {
  
       this.Projcis = data.map(e => {
@@ -66,5 +69,8 @@ export class EngciPage implements OnInit {
     this.crudService.update_Projci(recordRow.id, record);
     recordRow.isEdit = false;
   }
-}
+=======
+  }
 
+>>>>>>> parent of 7f66cde... FUNCIONOU
+}
