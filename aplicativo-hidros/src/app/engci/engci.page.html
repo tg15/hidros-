@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Serviços
+      Serviços de Civil
     </ion-title>
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content padding>
  
   <ion-grid fixed>
@@ -25,8 +25,8 @@
           <ion-input placeholder="Briefing" [(ngModel)]="ServicoAddress"></ion-input>
         </ion-item>
       </ion-col>
-      
-    </ion-row>
+
+  </ion-row>
     <ion-row>
       <ion-col text-center>
         <ion-button (click)="CreateRecord()" [disabled]="!ServicoName || !ServicoAge || !ServicoAddress">

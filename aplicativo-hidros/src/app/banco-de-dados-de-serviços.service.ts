@@ -27,24 +27,20 @@ export class CrudService {
   delete_Servico(record_id) {
     this.firestore.doc('Serviço/' + record_id).delete();
   }
-<<<<<<< HEAD
 
-
-
-
-  create_NewProjci(record) {
+  create_NewStudent(record) {
     return this.firestore.collection('PC').add(record);
   }
  
-  read_Projcis() {
+  read_Students() {
     return this.firestore.collection('PC').snapshotChanges();
   }
  
-  update_Projci(recordID,record){
+  update_Student(recordID,record){
     this.firestore.doc('PC/' + recordID).update(record);
   }
  
-  delete_Projci(record_id) {
+  delete_Student(record_id) {
     this.firestore.doc('PC/' + record_id).delete();
   }
 
@@ -55,7 +51,7 @@ export class CrudService {
     return this.firestore.collection('PM').add(record);
   }
  
-  read_Projmecs() {
+  read_ProjMecs() {
     return this.firestore.collection('PM').snapshotChanges();
   }
  
@@ -107,8 +103,4 @@ export class CrudService {
   }
 
 
-
-
-=======
->>>>>>> parent of 7f66cde... FUNCIONOU
 }

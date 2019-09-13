@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CrudService } from './../banco-de-dados-de-serviços.service';
 
 @Component({
   selector: 'app-engmec',
@@ -7,18 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EngmecPage implements OnInit {
 
-<<<<<<< HEAD
-  ProjMecs: any;
-  ProjmecName: string;
-  ProjmecAge: number;
-  ProjmecAddress: string;
+  students: any;
+  studentName: string;
+  studentAge: number;
+  studentAddress: string;
 
   constructor(private crudService: CrudService) { }
 
   ngOnInit() {
     this.crudService.read_ProjMecs().subscribe(data => {
  
-      this.ProjMecs = data.map(e => {
+      this.Servicos = data.map(e => {
         return {
           id: e.payload.doc.id,
           isEdit: false,
@@ -27,21 +27,21 @@ export class EngmecPage implements OnInit {
           Address: e.payload.doc.data()['Briefing'],
         };
       })
-      console.log(this.ProjMecs);
+      console.log(this.Servicos);
  
-    }); 
+    });
   }
 
 
   CreateRecord() {
     let record = {};
-    record['Serviço'] = this.ProjmecName;
-    record['Descrição'] = this.ProjmecAge;
-    record['Briefing'] = this.ProjmecAddress;
+    record['Serviço'] = this.ServicoName;
+    record['Descrição'] = this.ServicoAge;
+    record['Briefing'] = this.ServicoAddress;
     this.crudService.create_NewProjmec(record).then(resp => {
-      this.ProjmecName = "";
-      this.ProjmecAge = undefined;
-      this.ProjmecAddress = "";
+      this.ServicoName = "";
+      this.ServicoAge = undefined;
+      this.ServicoAddress = "";
       console.log(resp);
     })
       .catch(error => {
@@ -67,11 +67,6 @@ export class EngmecPage implements OnInit {
     this.crudService.update_Projmec(recordRow.id, record);
     recordRow.isEdit = false;
   }
-=======
-  constructor() { }
 
-  ngOnInit() {
-  }
 
->>>>>>> parent of 7f66cde... FUNCIONOU
 }

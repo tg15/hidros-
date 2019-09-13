@@ -1,27 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CrudService } from './../banco-de-dados-de-serviços.service';
+
+
+
 @Component({
   selector: 'app-engci',
   templateUrl: './engci.page.html',
   styleUrls: ['./engci.page.scss'],
 })
 export class EngciPage implements OnInit {
-<<<<<<< HEAD
-  
-  Projcis: any;
-  ProjciName: string;
-  ProjciAge: number;
-  ProjciAddress: string;
-=======
->>>>>>> parent of 7f66cde... FUNCIONOU
+  students: any;
+  studentName: string;
+  studentAge: number;
+  studentAddress: string;
 
-  constructor() { }
+  constructor(private crudService: CrudService) { }
 
   ngOnInit() {
-<<<<<<< HEAD
-    this.crudService.read_Projcis().subscribe(data => {
+    this.crudService.read_Students().subscribe(data => {
  
-      this.Projcis = data.map(e => {
+      this.Servicos = data.map(e => {
         return {
           id: e.payload.doc.id,
           isEdit: false,
@@ -30,20 +29,21 @@ export class EngciPage implements OnInit {
           Address: e.payload.doc.data()['Briefing'],
         };
       })
-      console.log(this.Projcis);
- 
+      console.log(this.Servicos);
+
     });
   }
 
+  
   CreateRecord() {
     let record = {};
-    record['Serviço'] = this.ProjciName;
-    record['Descrição'] = this.ProjciAge;
-    record['Briefing'] = this.ProjciAddress;
-    this.crudService.create_NewProjci(record).then(resp => {
-      this.ProjciName = "";
-      this.ProjciAge = undefined;
-      this.ProjciAddress = "";
+    record['Serviço'] = this.ServicoName;
+    record['Descrição'] = this.ServicoAge;
+    record['Briefing'] = this.ServicoAddress;
+    this.crudService.create_NewStudent(record).then(resp => {
+      this.ServicoName = "";
+      this.ServicoAge = undefined;
+      this.ServicoAddress = "";
       console.log(resp);
     })
       .catch(error => {
@@ -51,7 +51,7 @@ export class EngciPage implements OnInit {
       });
   }
   RemoveRecord(rowID) {
-    this.crudService.delete_Projci(rowID);
+    this.crudService.delete_Student(rowID);
   }
   
   EditRecord(record) {
@@ -66,11 +66,7 @@ export class EngciPage implements OnInit {
     record['Serviço'] = recordRow.EditName;
     record['Descrição'] = recordRow.EditAge;
     record['Briefing'] = recordRow.EditAddress;
-    this.crudService.update_Projci(recordRow.id, record);
+    this.crudService.update_Student(recordRow.id, record);
     recordRow.isEdit = false;
   }
-=======
-  }
-
->>>>>>> parent of 7f66cde... FUNCIONOU
 }
