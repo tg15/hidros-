@@ -8,11 +8,10 @@ import { CrudService } from './../banco-de-dados-de-serviços.service';
   styleUrls: ['./engamb.page.scss'],
 })
 export class EngambPage implements OnInit {
-  students: any;
-  studentName: string;
-  studentAge: number;
-  studentAddress: string;
-
+  Servicos: any;
+  ServicoName: string;
+  ServicoAge: string;
+  ServicoAddress: string;
 
   constructor(private crudService: CrudService) { }
 
