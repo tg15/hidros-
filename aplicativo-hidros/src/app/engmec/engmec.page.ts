@@ -9,17 +9,17 @@ import { CrudService } from './../banco-de-dados-de-serviços.service';
 })
 export class EngmecPage implements OnInit {
 
-  students: any;
-  studentName: string;
-  studentAge: number;
-  studentAddress: string;
+  ProjMecs: any;
+  ProjmecName: string;
+  ProjmecAge: number;
+  ProjmecAddress: string;
 
   constructor(private crudService: CrudService) { }
 
   ngOnInit() {
     this.crudService.read_ProjMecs().subscribe(data => {
  
-      this.Servicos = data.map(e => {
+      this.ProjMecs = data.map(e => {
         return {
           id: e.payload.doc.id,
           isEdit: false,
@@ -28,21 +28,21 @@ export class EngmecPage implements OnInit {
           Address: e.payload.doc.data()['Briefing'],
         };
       })
-      console.log(this.Servicos);
+      console.log(this.ProjMecs);
  
-    });
+    }); 
   }
 
 
   CreateRecord() {
     let record = {};
-    record['Serviço'] = this.ServicoName;
-    record['Descrição'] = this.ServicoAge;
-    record['Briefing'] = this.ServicoAddress;
+    record['Serviço'] = this.ProjmecName;
+    record['Descrição'] = this.ProjmecAge;
+    record['Briefing'] = this.ProjmecAddress;
     this.crudService.create_NewProjmec(record).then(resp => {
-      this.ServicoName = "";
-      this.ServicoAge = undefined;
-      this.ServicoAddress = "";
+      this.ProjmecName = "";
+      this.ProjmecAge = undefined;
+      this.ProjmecAddress = "";
       console.log(resp);
     })
       .catch(error => {

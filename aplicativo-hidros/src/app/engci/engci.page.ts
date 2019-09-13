@@ -8,17 +8,17 @@ import { CrudService } from './../banco-de-dados-de-serviços.service';
 })
 export class EngciPage implements OnInit {
   
-  students: any;
-  studentName: string;
-  studentAge: number;
-  studentAddress: string;
+  Projcis: any;
+  ProjciName: string;
+  ProjciAge: number;
+  ProjciAddress: string;
 
   constructor(private crudService: CrudService) { }
 
   ngOnInit() {
-    this.crudService.read_Students().subscribe(data => {
+    this.crudService.read_Projcis().subscribe(data => {
  
-      this.Servicos = data.map(e => {
+      this.Projcis = data.map(e => {
         return {
           id: e.payload.doc.id,
           isEdit: false,
@@ -27,20 +27,20 @@ export class EngciPage implements OnInit {
           Address: e.payload.doc.data()['Briefing'],
         };
       })
-      console.log(this.Servicos);
+      console.log(this.Projcis);
  
     });
   }
 
   CreateRecord() {
     let record = {};
-    record['Serviço'] = this.ServicoName;
-    record['Descrição'] = this.ServicoAge;
-    record['Briefing'] = this.ServicoAddress;
-    this.crudService.create_NewStudent(record).then(resp => {
-      this.ServicoName = "";
-      this.ServicoAge = undefined;
-      this.ServicoAddress = "";
+    record['Serviço'] = this.ProjciName;
+    record['Descrição'] = this.ProjciAge;
+    record['Briefing'] = this.ProjciAddress;
+    this.crudService.create_NewProjci(record).then(resp => {
+      this.ProjciName = "";
+      this.ProjciAge = undefined;
+      this.ProjciAddress = "";
       console.log(resp);
     })
       .catch(error => {
@@ -48,7 +48,7 @@ export class EngciPage implements OnInit {
       });
   }
   RemoveRecord(rowID) {
-    this.crudService.delete_Student(rowID);
+    this.crudService.delete_Projci(rowID);
   }
   
   EditRecord(record) {
@@ -63,7 +63,7 @@ export class EngciPage implements OnInit {
     record['Serviço'] = recordRow.EditName;
     record['Descrição'] = recordRow.EditAge;
     record['Briefing'] = recordRow.EditAddress;
-    this.crudService.update_Student(recordRow.id, record);
+    this.crudService.update_Projci(recordRow.id, record);
     recordRow.isEdit = false;
   }
 }
