@@ -31,19 +31,19 @@ export class CrudService {
 
 
 
-  create_NewStudent(record) {
+  create_NewProjci(record) {
     return this.firestore.collection('PC').add(record);
   }
  
-  read_Students() {
+  read_Projcis() {
     return this.firestore.collection('PC').snapshotChanges();
   }
  
-  update_Student(recordID,record){
+  update_Projci(recordID,record){
     this.firestore.doc('PC/' + recordID).update(record);
   }
  
-  delete_Student(record_id) {
+  delete_Projci(record_id) {
     this.firestore.doc('PC/' + record_id).delete();
   }
 
@@ -54,7 +54,7 @@ export class CrudService {
     return this.firestore.collection('PM').add(record);
   }
  
-  read_ProjMecs() {
+  read_Projmecs() {
     return this.firestore.collection('PM').snapshotChanges();
   }
  

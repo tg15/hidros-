@@ -12,24 +12,24 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Serviço" [(ngModel)]="ServicoName"></ion-input>
+          <ion-input placeholder="Serviço" [(ngModel)]="ProjmecName"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Descrição" [(ngModel)]="ServicoAge"></ion-input>
+          <ion-input placeholder="Descrição" [(ngModel)]="ProjmecAge"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-input placeholder="Briefing" [(ngModel)]="ServicoAddress"></ion-input>
+          <ion-input placeholder="Briefing" [(ngModel)]="ProjmecAddress"></ion-input>
         </ion-item>
       </ion-col>
       
     </ion-row>
     <ion-row>
       <ion-col text-center>
-        <ion-button (click)="CreateRecord()" [disabled]="!ServicoName || !ServicoAge || !ServicoAddress">
+        <ion-button (click)="CreateRecord()" [disabled]="!ProjmecName || !ProjmecAge || !ProjmecAddress">
           <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
           &nbsp;Create Record
         </ion-button>
@@ -38,7 +38,7 @@
   </ion-grid>
  
  
-  <ion-card *ngFor="let item of Servicos" >
+  <ion-card *ngFor="let item of Projmecs" >
     <span *ngIf="!item.isEdit; else elseBlock">
       <ion-card-header>
         <ion-card-title>{{item.Name}}</ion-card-title>
