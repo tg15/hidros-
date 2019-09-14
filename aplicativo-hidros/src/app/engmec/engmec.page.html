@@ -5,7 +5,7 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+ 
 <ion-content padding>
  
   <ion-grid fixed>
@@ -25,11 +25,16 @@
           <ion-input placeholder="Briefing" [(ngModel)]="ServicoAddress"></ion-input>
         </ion-item>
       </ion-col>
-
-  </ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Entregáveis" [(ngModel)]="ServicoName2"></ion-input>
+        </ion-item>
+      </ion-col>
+      
+    </ion-row>
     <ion-row>
       <ion-col text-center>
-        <ion-button (click)="CreateRecord()" [disabled]="!ServicoName || !ServicoAge || !ServicoAddress">
+        <ion-button (click)="CreateRecord()" [disabled]="!ServicoName || !ServicoAge || !ServicoAddress || !ServicoName2">
           <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
           &nbsp;Adicionar Serviço
         </ion-button>
@@ -38,12 +43,13 @@
   </ion-grid>
  
  
-  <ion-card *ngFor="let item of Servicos" >
+  <ion-card *ngFor="let item of Servicos" click="serviços(item)"rounterlink="/nota" class="item">
     <span *ngIf="!item.isEdit; else elseBlock">
       <ion-card-header>
         <ion-card-title>{{item.Name}}</ion-card-title>
         <ion-card-subtitle>{{item.Age}}</ion-card-subtitle>
-        <ion-card-subtitle>Briefing:<br><br>{{item.Address}}</ion-card-subtitle>
+        <ion-card-subtitle>Briefing:{{item.Address}}</ion-card-subtitle>
+        <ion-card-subtitle>Entregáveis:{{item.Name2}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
  
@@ -91,6 +97,10 @@
         <ion-item>
           <ion-label><strong>Briefing</strong></ion-label>
           <ion-input type="text" [(ngModel)]="item.EditAddress"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Entregáveis</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditName2"></ion-input>
         </ion-item>
       </ion-card-content>
     </ng-template>

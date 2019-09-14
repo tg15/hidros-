@@ -14,6 +14,7 @@ export class EngproPage implements OnInit {
   ServicoName: string;
   ServicoAge: string;
   ServicoAddress: string;
+  ServicoName2: string;
   
   constructor(private crudService: CrudService) { }
 
@@ -27,6 +28,7 @@ export class EngproPage implements OnInit {
           Name: e.payload.doc.data()['Serviço'],
           Age: e.payload.doc.data()['Descrição'],
           Address: e.payload.doc.data()['Briefing'],
+          Name2: e.payload.doc.data()['Entregáveis'],
         };
       })
       console.log(this.Servicos);
@@ -40,10 +42,12 @@ export class EngproPage implements OnInit {
     record['Serviço'] = this.ServicoName;
     record['Descrição'] = this.ServicoAge;
     record['Briefing'] = this.ServicoAddress;
-    this.crudService.create_NewProjprod(record).then(resp => {
+    record['Entrevgáveis'] = this.ServicoName2;
+    this.crudService.create_NewProjamb(record).then(resp => {
       this.ServicoName = "";
       this.ServicoAge = undefined;
       this.ServicoAddress = "";
+      this.ServicoName2 = "";
       console.log(resp);
     })
       .catch(error => {
@@ -51,7 +55,7 @@ export class EngproPage implements OnInit {
       });
   }
   RemoveRecord(rowID) {
-    this.crudService.delete_Projprod(rowID);
+    this.crudService.delete_Projamb(rowID);
   }
   
   EditRecord(record) {
@@ -59,6 +63,7 @@ export class EngproPage implements OnInit {
     record.EditName = record.Name;
     record.EditAge = record.Age;
     record.EditAddress = record.Address;
+    record.EditName2 = record.Name2;
   }
 
   UpdateRecord(recordRow) {
@@ -66,7 +71,8 @@ export class EngproPage implements OnInit {
     record['Serviço'] = recordRow.EditName;
     record['Descrição'] = recordRow.EditAge;
     record['Briefing'] = recordRow.EditAddress;
-    this.crudService.update_Projprod(recordRow.id, record);
+    record['Entregáveis'] = recordRow.EditName2;
+    this.crudService.update_Projamb(recordRow.id, record);
     recordRow.isEdit = false;
   }
 }
