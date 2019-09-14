@@ -31,7 +31,7 @@
       <ion-col text-center>
         <ion-button (click)="CreateRecord()" [disabled]="!ServicoName || !ServicoAge || !ServicoAddress">
           <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
-          &nbsp;Create Record
+          &nbsp;Adicionar serviço
         </ion-button>
       </ion-col>
     </ion-row>
@@ -63,16 +63,16 @@
           <ion-grid>
             <ion-row>
               <ion-col>
-                Edit
+                Editar
               </ion-col>
               <ion-col>
                 <ion-button fill="clear" color="medium" size="small" (click)="item.isEdit = false">
-                  Cancel
+                  Cancelar
                 </ion-button>
               </ion-col>
               <ion-col>
                 <ion-button fill="outline" color="success" size="small" (click)="UpdateRecord(item)">
-                  Update
+                  Atualizar
                 </ion-button>
               </ion-col>
             </ion-row>
