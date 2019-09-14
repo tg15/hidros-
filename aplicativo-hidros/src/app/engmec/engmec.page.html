@@ -1,49 +1,50 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Serviços de Mecânica
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
- 
-<ion-content padding>
+  
+    <ion-toolbar color="secondary">
+      <ion-title color="primary">
+        SERVIÇOS DE MECÂNICA
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content color="tertiary" padding>
  
   <ion-grid fixed>
     <ion-row>
       <ion-col>
-        <ion-item>
-          <ion-input placeholder="Serviço" [(ngModel)]="ServicoName"></ion-input>
+        <ion-item color="dark">
+          <ion-input color="primary" placeholder="Serviço" [(ngModel)]="ServicoName"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
-        <ion-item>
-          <ion-input placeholder="Descrição" [(ngModel)]="ServicoAge"></ion-input>
+        <ion-item color="dark">
+          <ion-input color="primary" placeholder="Descrição" [(ngModel)]="ServicoAge"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
-        <ion-item>
-          <ion-input placeholder="Briefing" [(ngModel)]="ServicoAddress"></ion-input>
+        <ion-item color="dark">
+          <ion-input color="primary" placeholder="Briefing" [(ngModel)]="ServicoAddress"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
-        <ion-item>
-          <ion-input placeholder="Entregáveis" [(ngModel)]="ServicoName2"></ion-input>
+        <ion-item color="dark">
+          <ion-input color="primary" placeholder="Entregáveis" [(ngModel)]="ServicoName2"></ion-input>
         </ion-item>
       </ion-col>
       
     </ion-row>
     <ion-row>
       <ion-col text-center>
-        <ion-button (click)="CreateRecord()" [disabled]="!ServicoName || !ServicoAge || !ServicoAddress || !ServicoName2">
-          <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
-          &nbsp;Adicionar Serviço
+        <ion-button color="dark" (click)="CreateRecord()" [disabled]="!ServicoName || !ServicoAge || !ServicoAddress || !ServicoName2">
+          <ion-icon color="primary" size="small" slot="icon-only" name="add"></ion-icon>
+          <ion-label color="primary">&nbsp;Adicionar Serviço</ion-label>
         </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
  
  
-  <ion-card *ngFor="let item of Servicos" click="serviços(item)"rounterlink="/nota" class="item">
+  <ion-card color="primary" *ngFor="let item of Servicos" click="serviços(item)"rounterlink="/nota" class="item">
     <span *ngIf="!item.isEdit; else elseBlock">
       <ion-card-header>
         <ion-card-title>{{item.Name}}</ion-card-title>
@@ -73,7 +74,7 @@
               </ion-col>
               <ion-col>
                 <ion-button fill="clear" color="medium" size="small" (click)="item.isEdit = false">
-                  Cancelar
+                  <ion-label color="light">  Cancelar</ion-label>
                 </ion-button>
               </ion-col>
               <ion-col>
@@ -86,21 +87,21 @@
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-item>
-          <ion-label><strong>Serviço</strong></ion-label>
-          <ion-input type="text" [(ngModel)]="item.EditName"></ion-input>
+        <ion-item color="dark">
+          <ion-label color="primary"><strong>Serviço</strong></ion-label>
+          <ion-input color="primary" type="text" [(ngModel)]="item.EditName"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label><strong>Descrição</strong></ion-label>
-          <ion-input type="text" [(ngModel)]="item.EditAge"></ion-input>
+        <ion-item color="dark">
+          <ion-label color="primary"><strong>Descrição</strong></ion-label>
+          <ion-input color="primary" type="text" [(ngModel)]="item.EditAge"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label><strong>Briefing</strong></ion-label>
-          <ion-input type="text" [(ngModel)]="item.EditAddress"></ion-input>
+        <ion-item color="dark">
+          <ion-label color="primary"><strong>Briefing</strong></ion-label>
+          <ion-input color="primary" type="text" [(ngModel)]="item.EditAddress"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label><strong>Entregáveis</strong></ion-label>
-          <ion-input type="text" [(ngModel)]="item.EditName2"></ion-input>
+        <ion-item color="dark">
+          <ion-label color="primary"><strong>Entregáveis</strong></ion-label>
+          <ion-input color="primary" type="text" [(ngModel)]="item.EditName2"></ion-input>
         </ion-item>
       </ion-card-content>
     </ng-template>
